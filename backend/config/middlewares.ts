@@ -1,25 +1,7 @@
-<<<<<<< HEAD
-=======
-// import type { Core } from '@strapi/strapi';
+import type { Core } from '@strapi/strapi';
 
-// const config: Core.Config.Middlewares = [
-//   'strapi::logger',
-//   'strapi::errors',
-//   'strapi::security',
-//   'strapi::cors',
-//   'strapi::poweredBy',
-//   'strapi::query',
-//   'strapi::body',
-//   'strapi::session',
-//   'strapi::favicon',
-//   'strapi::public',
-// ];
-
-// export default config;
-
-
->>>>>>> b014853071efb80bbb0f4eb8689195a5c5d48db2
-module.exports = [
+const config: Core.Config.Middlewares = [
+  'strapi::logger',
   'strapi::errors',
   {
     name: 'strapi::security',
@@ -37,19 +19,18 @@ module.exports = [
     config: {
       origin: [
         'http://localhost:3000',
-<<<<<<< HEAD
-        'https://todo-two-peach.vercel.app',
-=======
-        'https://todo-backend-ku14.onrender.com',
->>>>>>> b014853071efb80bbb0f4eb8689195a5c5d48db2
+        'https://todo-two-peach.vercel.app',  
       ],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization'],
     },
   },
   'strapi::poweredBy',
-  'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
 ];
+
+export default config;
